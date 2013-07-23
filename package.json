@@ -1,0 +1,31 @@
+{
+  "name": "orms",
+  "version": "0.0.1",
+  "description": "Generic ORM models loader for node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/torworx/orms.git"
+  },
+  "keywords": [
+    "model",
+    "orm",
+    "jugglingdb",
+    "persist"
+  ],
+  "author": "Tao Yuan",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/torworx/orms/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.11.0",
+    "expect.js": "~0.2.0",
+    "persist": "~0.2.7",
+    "persist-schema": "~0.0.4",
+    "jugglingdb": "~0.2.0-35"
+  }
+}
