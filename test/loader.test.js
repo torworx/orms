@@ -26,7 +26,7 @@ describe('Loader', function() {
 
     it('load from object', function () {
         var loader = creatLoader();
-        var schema = loader.load(null, { schemaFile: __dirname + '/db/schema', modelsDir: __dirname + '/db/models'}),
+        var schema = loader.load(null,  __dirname + '/db/schema', __dirname + '/db/models'),
             Company = schema.model('Company'),
             Person = schema.model('Person');
 
