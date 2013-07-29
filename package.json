@@ -1,6 +1,6 @@
 {
   "name": "orms",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Generic ORM models loader for node.",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,8 @@
     "expect.js": "~0.2.0",
     "persist": "~0.2.7",
     "persist-schema": "~0.0.5",
-    "jugglingdb": "~0.2.0-35"
+    "jugglingdb": "~0.2.0-35",
+    "orm": "~2.0.15",
+    "async": "~0.2.9"
   }
 }

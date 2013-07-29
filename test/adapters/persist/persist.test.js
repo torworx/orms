@@ -6,7 +6,7 @@ describe('Persist', function() {
 
     var loader = orms.loader('persist');
 
-    it('load', function () {
+    it('load schema', function () {
         var schema = loader.load(null, __dirname + '/db');
 
         expect(schema.models.Company).to.be.ok();
