@@ -12,7 +12,7 @@ describe('ORM', function () {
 
         async.eachSeries(models, function (item, cb) {
             item.drop(function (err) {
-                if (err) throw err
+                if (err) throw err;
 
                 item.sync(cb);
             });
@@ -21,7 +21,9 @@ describe('ORM', function () {
 
     it('load schema', function (done) {
         orm.connect({ database: ':memory:', protocol: 'sqlite', query: {debug: true}}, function (err, db) {
-            orms.load('orm', db, __dirname + '/db');
+            var models = orms.load('orm', db, __dirname + '/db');
+            expect(models.Company).to.be.ok();
+            expect(models.Person).to.be.ok();
             dropSync([db.models.Company, db.models.Person], function() {
                 expect(db.models.Company).to.be.ok();
                 expect(db.models.Person).to.be.ok();

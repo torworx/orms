@@ -1,4 +1,5 @@
 var persist = require('persist'),
+    Schema = require('persist-schema').Schema,
     expect = require('expect.js'),
     orms = require('../../../');
 
@@ -7,7 +8,8 @@ describe('Persist', function() {
     var loader = orms.loader('persist');
 
     it('load schema', function () {
-        var schema = loader.load(null, __dirname + '/db');
+        var schema = new Schema();
+        loader.load(schema, __dirname + '/db');
 
         expect(schema.models.Company).to.be.ok();
         expect(schema.models.Person).to.be.ok();

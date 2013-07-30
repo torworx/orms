@@ -1,4 +1,5 @@
 var persist = require('persist'),
+    Schema = require('persist-schema').Schema,
     expect = require('expect.js'),
     Loader = require('../lib/loader');
 
@@ -10,9 +11,13 @@ describe('Loader', function() {
 
     it('load from dir string', function () {
         var loader = creatLoader();
-        var schema = loader.load(null, __dirname + '/db'),
-            Company = schema.model('Company'),
+        var schema = new Schema();
+        loader.load(schema, __dirname + '/db');
+
+        var Company = schema.model('Company'),
             Person = schema.model('Person');
+
+
 
         expect(Company).to.be.ok();
         expect(Person).to.be.ok();
@@ -26,8 +31,9 @@ describe('Loader', function() {
 
     it('load from object', function () {
         var loader = creatLoader();
-        var schema = loader.load(null,  __dirname + '/db/schema', __dirname + '/db/models'),
-            Company = schema.model('Company'),
+        var schema = new Schema();
+        loader.load(schema,  __dirname + '/db/schema', __dirname + '/db/models');
+        var Company = schema.model('Company'),
             Person = schema.model('Person');
 
         expect(Company).to.be.ok();
@@ -42,7 +48,7 @@ describe('Loader', function() {
 
     it('load from multi locations', function () {
         var loader = creatLoader();
-        var schema = new (require('persist-schema').Schema)();
+        var schema = new Schema();
         loader.load(schema, __dirname + '/db');
         loader.load(schema, __dirname + '/db2');
 
