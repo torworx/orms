@@ -1,18 +1,18 @@
 module.exports = exports = function(schema, t) {
 
     schema.define("Company", {
-        "name": t.string
+        "name": t.STRING
     });
 
     schema.define("Person", {
-        "name": t.string,
-        "age": t.number,
-        "createdDate": { type: t.date },
-        "lastUpdated": { type: t.date }
+        "name": t.STRING,
+        "age": t.NUMBER,
+        "createdDate": { type: t.DATE },
+        "lastUpdated": { type: t.DATE }
     });
 
     schema.define("CompanyPerson", {
-        "companyId": t.number,
-        "personId": t.number
+        "companyId": t.NUMBER,
+        "personId": t.NUMBER
     });
 };
